@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+	.responsive-tabs-container[class*="accordion-"] .tab-pane {
+  margin-bottom: 15px;
+}
+.responsive-tabs-container[class*="accordion-"] .accordion-link {
+  display: none;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+@media (max-width: 767px) {
+  .responsive-tabs-container.accordion-xs .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-xs .accordion-link {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .responsive-tabs-container.accordion-sm .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-sm .accordion-link {
+    display: block;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .responsive-tabs-container.accordion-md .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-md .accordion-link {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .responsive-tabs-container.accordion-lg .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-lg .accordion-link {
+    display: block;
+  }
+}
+/*# sourceMappingURL=bootstrap-responsive-tabs.css.map */
+</style>
+</head>
+<body>
+
+<div class="container">
+  <ul class="nav nav-tabs  responsive-tabs">
+    <li class="active"><a href="#home">Home</a></li>
+    
+    <li><a href="#menu1">Menu 1</a></li>  
+    <li><a href="#menu2">Menu 2</a></li>  
+    <li><a href="#menu3">Menu 3</a></li>  
+    <li><a href="#menu4">Menu 4</a></li>  
+    <li><a href="#menu5">Menu 5</a></li>    
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane">
+      <h3>Menu 2</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu3" class="tab-pane">
+      <h3>Menu3</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu4" class="tab-pane">
+      <h3>Menu 4</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu5" class="tab-pane">
+      <h3>Menu 5</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  !function($){"use strict";var a={accordionOn:["xs"]};$.fn.responsiveTabs=function(e){var t=$.extend({},a,e),s="";return $.each(t.accordionOn,function(a,e){s+=" accordion-"+e}),this.each(function(){var a=$(this),e=a.find("> li > a"),t=$(e.first().attr("href")).parent(".tab-content"),i=t.children(".tab-pane");a.add(t).wrapAll('<div class="responsive-tabs-container" />');var n=a.parent(".responsive-tabs-container");n.addClass(s),e.each(function(a){var t=$(this),s=t.attr("href"),i="",n="",r="";t.parent("li").hasClass("active")&&(i=" active"),0===a&&(n=" first"),a===e.length-1&&(r=" last"),t.clone(!1).addClass("accordion-link"+i+n+r).insertBefore(s)});var r=t.children(".accordion-link");e.on("click",function(a){a.preventDefault();var e=$(this),s=e.parent("li"),n=s.siblings("li"),c=e.attr("href"),l=t.children('a[href="'+c+'"]');s.hasClass("active")||(s.addClass("active"),n.removeClass("active"),i.removeClass("active"),$(c).addClass("active"),r.removeClass("active"),l.addClass("active"))}),r.on("click",function(t){t.preventDefault();var s=$(this),n=s.attr("href"),c=a.find('li > a[href="'+n+'"]').parent("li");s.hasClass("active")||(r.removeClass("active"),s.addClass("active"),i.removeClass("active"),$(n).addClass("active"),e.parent("li").removeClass("active"),c.addClass("active"))})})}}(jQuery);
+//# sourceMappingURL=./jquery.bootstrap-responsive-tabs.min.js.map
+  </script>
+<script>
+$('.responsive-tabs').responsiveTabs({
+  accordionOn: ['xs', 'sm']
+});
+</script>
+
+</body>
+</html>
+
